@@ -2,6 +2,12 @@
 
 This is a simple and interactive Sudoku game created in Python. It allows users to choose between three levels of difficulty - easy, medium, and hard. The easy level corresponds to a 4x4 Sudoku grid, the medium level to a 6x6 grid, and the hard level to a 9x9 grid. 
 
+## Distribution
+
+Our first distribution is live on PyPI! 
+
+See: https://pypi.org/project/CyberCells/0.1/ for more info!
+
 ## Installation
 
 Before you run the game, you need to install the following dependencies:
