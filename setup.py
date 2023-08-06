@@ -6,7 +6,9 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
+
             'CyberCells=CyberCells:main',
+            'PyDoku=PyDoku:main',
         ],
     },
     install_requires=[

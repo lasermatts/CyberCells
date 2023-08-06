@@ -17,9 +17,7 @@ def generate_sudoku(size, difficulty):
             grid[i][j] = nums[j]
     if solve_sudoku(grid, size):
         grid = remove_numbers(grid, size, difficulty)
-        print_grid(grid, size)
-        return grid  # <-- This is the added line
-
+        return grid  
     else:
         print("No solution exists")
 
@@ -56,6 +54,9 @@ def solve_sudoku(grid, size, row=0, col=0):
     return False
 
 def print_grid(grid, size):
+    # Print a line of dashes above the grid
+    print("-" * (size * 2 + size // 3))
+    # Print the grid
     for i in range(size):
         for j in range(size):
             if isinstance(grid[i][j], str):  # print 'x' for removed numbers
@@ -63,6 +64,9 @@ def print_grid(grid, size):
             else:
                 print(grid[i][j], end = " ")
         print()
+    # Print a line of dashes below the grid
+    print("-" * (size * 2 + size // 3))
+
 
 def remove_numbers(grid, size, num_to_remove):
     while num_to_remove > 0:
@@ -77,10 +81,24 @@ def get_user_solution(grid, size):
     while True:
         # Print the current state of the grid
         print_grid(grid, size)
-        user_input = input("Enter your solution in the format 'row col num', or 'q' to quit: ")
-        if user_input.lower() == 'q':
-            break
-        row, col, num = map(int, user_input.split())
+        try:
+            row_input = input("Enter the row number (0-{}) or 'q' to quit: ".format(size - 1))
+            if row_input.lower() == 'q':
+                return
+            row = int(row_input)
+
+            col_input = input("Enter the column number (0-{}) or 'q' to quit: ".format(size - 1))
+            if col_input.lower() == 'q':
+                return
+            col = int(col_input)
+
+            num_input = input("Enter the number you want to place (1-{}) or 'q' to quit: ".format(size))
+            if num_input.lower() == 'q':
+                return
+            num = int(num_input)
+        except ValueError: # Catch non-integer inputs
+            print("Invalid input, please enter an integer or 'q' to quit.")
+            continue
         if is_valid(grid, row, col, num, size):
             grid[row][col] = num
             if is_grid_solved(grid, size):
@@ -88,6 +106,8 @@ def get_user_solution(grid, size):
                 break
         else:
             print("Invalid move. Please try again.")
+
+
 
 def is_grid_solved(grid, size):
     # Assuming an "x" in the grid means it is not filled
