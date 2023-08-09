@@ -21,7 +21,7 @@ Before you run the game, you need to install the following dependencies:
 `git clone https://github.com/lasermatts/PyDoku.git`
 
 ## Running the Game
-`cd PyDoku`
+`cd CyberCells`
 `python sudoku.py`
 
 The game will prompt you to enter a difficulty level. Enter "easy", "medium", or "hard" to start the game. If you wish to quit the game, just type "q".
