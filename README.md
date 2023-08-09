@@ -1,3 +1,9 @@
+ \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ --o-|C|Y|B|E|R|-|C|E|L|L|S|-o--
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
 # Python Sudoku Game
 
 This is a simple and interactive Sudoku game created in Python. It allows users to choose between three levels of difficulty - easy, medium, and hard. The easy level corresponds to a 4x4 Sudoku grid, the medium level to a 6x6 grid, and the hard level to a 9x9 grid. 

@@ -5,6 +5,10 @@
 import numpy as np
 import math
 import random
+from colorama import init, Fore, Back, Style
+from logo import print_logo
+
+init(autoreset=True)
 
 def generate_sudoku(size, difficulty):
     # Create a list to store the Sudoku grid
@@ -59,14 +63,13 @@ def print_grid(grid, size):
     # Print the grid
     for i in range(size):
         for j in range(size):
-            if isinstance(grid[i][j], str):  # print 'x' for removed numbers
-                print(grid[i][j], end = " ")
+            if isinstance(grid[i][j], str):  # print 'x' for removed numbers with remove_numbers
+                print(Back.RED + Style.BRIGHT + grid[i][j], end=" ")
             else:
                 print(grid[i][j], end = " ")
         print()
     # Print a line of dashes below the grid
     print("-" * (size * 2 + size // 3))
-
 
 def remove_numbers(grid, size, num_to_remove):
     while num_to_remove > 0:
@@ -107,15 +110,13 @@ def get_user_solution(grid, size):
         else:
             print("Invalid move. Please try again.")
 
-
-
 def is_grid_solved(grid, size):
     # Assuming an "x" in the grid means it is not filled
     return all(all(cell != 0 for cell in row) for row in grid) and \
            all(is_valid(grid, row, col, grid[row][col], size) for row in range(size) for col in range(size))
 
-
 def main():
+    print_logo()
     while True:
         difficulty = input("Please enter the difficulty (easy, medium, hard) or 'q' to exit: ")
         if difficulty == "easy":
