@@ -6,6 +6,7 @@ import numpy as np
 import math
 import random
 from colorama import init, Fore, Back, Style
+from logo import print_logo
 
 init(autoreset=True)
 
@@ -115,6 +116,7 @@ def is_grid_solved(grid, size):
            all(is_valid(grid, row, col, grid[row][col], size) for row in range(size) for col in range(size))
 
 def main():
+    print_logo()
     while True:
         difficulty = input("Please enter the difficulty (easy, medium, hard) or 'q' to exit: ")
         if difficulty == "easy":
