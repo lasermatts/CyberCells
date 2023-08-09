@@ -10,7 +10,7 @@ This is a simple and interactive Sudoku game created in Python. It allows users 
 
 Our first distribution is live on PyPI! 
 
-See: https://pypi.org/project/CyberCells/0.1/ for more info!
+See: https://pypi.org/project/CyberCells/0.1.1/ for more info!
 
 ## Installation
 
