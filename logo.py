@@ -10,4 +10,4 @@ def print_logo():
  |C|Y|B|E|R|-|C|E|L|L|S|
  +-+-+-+-+-+-+-+-+-+-+-+
     """
-    print(Fore.CYAN + logo)
+    print(Fore.RED + logo)
