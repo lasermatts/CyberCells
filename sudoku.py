@@ -124,10 +124,10 @@ def main():
             get_user_solution(grid, 4)
         elif difficulty == "medium":
             grid = generate_sudoku(6, 12)  # Removing 12 numbers for medium 6x6 Sudoku
-            get_user_solution(grid, 4)
+            get_user_solution(grid, 6)
         elif difficulty == "hard":
             grid = generate_sudoku(9, 20)  # Removing 20 numbers for hard 9x9 Sudoku
-            get_user_solution(grid, 4)
+            get_user_solution(grid, 9)
         elif difficulty.lower() == "q":
             break
         else:
